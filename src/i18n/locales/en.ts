@@ -97,6 +97,9 @@ const en: Dict = {
   'product.relatedEyebrow': 'Keep looking',
   'product.relatedTitle': 'More <em>objects.</em>',
   'product.specs': 'Specifications',
+  'product.priceOnRequest': 'Price on request',
+  'product.enquire': 'Enquire',
+  'product.viewDetails': 'View details',
 
   'avail.available': 'Available',
   'avail.made-to-order': 'Made to order',
@@ -132,5 +135,6 @@ const en: Dict = {
 }
 
 export default en
+
 
 

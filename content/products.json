@@ -10,8 +10,8 @@
       "seoTitle": "Pikachu | Handmade Resin Diorama Night Light | MADE IN CN",
       "seoDescription": "A hand-cast Pikachu diorama night light in crystal resin and black walnut, made in China and finished by hand.",
       "note": "Each lamp is assembled, poured and finished by hand. Slight variations in the resin and grain are part of the piece. USB-C rechargeable, warm dimmable LED, gift packaging included.",
-      "price": 189,
-      "currency": "USD",
+      "price": 225000,
+      "currency": "VND",
       "images": [
         "/images/products/pikachu/pikachu-01.jpg",
         "/images/products/pikachu/pikachu-02.jpg",
@@ -25,17 +25,45 @@
         "/images/products/pikachu/pikachu-detail-03.jpg",
         "/images/products/pikachu/pikachu-detail-04.jpg"
       ],
-      "detailCaptions": ["On the desk", "By the bed", "In the collection", "What’s in the box"],
-      "detailCaptionsVi": ["Trên bàn làm việc", "Cạnh giường", "Trong bộ sưu tập", "Trong hộp có gì"],
+      "detailCaptions": [
+        "On the desk",
+        "By the bed",
+        "In the collection",
+        "What’s in the box"
+      ],
+      "detailCaptionsVi": [
+        "Trên bàn làm việc",
+        "Cạnh giường",
+        "Trong bộ sưu tập",
+        "Trong hộp có gì"
+      ],
       "category": "lighting",
       "collection": "pokemon",
       "specifications": [
-        { "label": "Dimensions", "value": "120mm × 120mm × 250mm (Approx. 4.7\" × 4.7\" × 9.8\")" },
-        { "label": "Net Weight", "value": "Approx. 1.2 kg (2.6 lbs) [Solid resin & natural wood core]" },
-        { "label": "Power & Voltage", "value": "Input: DC 5V / 2A (USB Type-C Rechargeable)" },
-        { "label": "Battery & Charging", "value": "3000mAh built-in lithium-ion battery | Charging time: ~2.5 to 3 hours" },
-        { "label": "Working Time", "value": "Up to 8–12 hours of continuous dynamic illumination" },
-        { "label": "Core Materials", "value": "Premium crystal-clear epoxy resin, natural black walnut wood, hand-painted PVC Pokémon figurine" }
+        {
+          "label": "Dimensions",
+          "value": "120mm × 120mm × 250mm (Approx. 4.7\" × 4.7\" × 9.8\")"
+        },
+        {
+          "label": "Net Weight",
+          "value": "Approx. 1.2 kg (2.6 lbs) [Solid resin & natural wood core]"
+        },
+        {
+          "label": "Power & Voltage",
+          "value": "Input: DC 5V / 2A (USB Type-C Rechargeable)"
+        },
+        {
+          "label": "Battery & Charging",
+          "value": "3000mAh built-in lithium-ion battery | Charging time: ~2.5 to 3 hours"
+        },
+        {
+          "label": "Working Time",
+          "value": "Up to 8–12 hours of continuous dynamic illumination"
+        },
+        {
+          "label": "Core Materials",
+          "value": "Premium crystal-clear epoxy resin, natural black walnut wood, hand-painted PVC Pokémon figurine"
+        }
       ],
       "purchaseUrl": null,
       "wooId": 2480,
@@ -52,12 +80,30 @@
           "description": "Dành cho người sưu tầm và người yêu trò chơi, đèn diorama Pokémon Artisan vượt khỏi cách trang trí thông thường. Mỗi tác phẩm được đúc thủ công bằng nhựa epoxy trong vắt cao cấp và đóng khung bằng gỗ óc chó đen tự nhiên. Ánh sáng chuyển động nhiều lớp đưa những khoảnh khắc biểu tượng vào chiều sâu 3D — một tác phẩm nghệ thuật ánh sáng ban ngày, một nguồn sáng sống động ban đêm.",
           "note": "Mỗi chiếc đèn được lắp ráp, rót nhựa và hoàn thiện bằng tay. Những khác biệt nhỏ về nhựa và vân gỗ là một phần của tác phẩm. Sạc USB-C, đèn LED ấm có thể điều chỉnh, kèm hộp quà.",
           "specifications": [
-            { "label": "Kích thước", "value": "120mm × 120mm × 250mm (Khoảng 4.7\" × 4.7\" × 9.8\")" },
-            { "label": "Trọng lượng", "value": "Khoảng 1.2 kg (2.6 lbs) [Lõi nhựa đặc & gỗ tự nhiên]" },
-            { "label": "Nguồn & điện áp", "value": "Đầu vào: DC 5V / 2A (Sạc USB Type-C)" },
-            { "label": "Pin & sạc", "value": "Pin lithium-ion tích hợp 3000mAh | Thời gian sạc: khoảng 2.5–3 giờ" },
-            { "label": "Thời gian hoạt động", "value": "Lên đến 8–12 giờ chiếu sáng chuyển động liên tục" },
-            { "label": "Chất liệu chính", "value": "Nhựa epoxy trong vắt cao cấp, gỗ óc chó đen tự nhiên, tượng Pokémon PVC sơn tay" }
+            {
+              "label": "Kích thước",
+              "value": "120mm × 120mm × 250mm (Khoảng 4.7\" × 4.7\" × 9.8\")"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "Khoảng 1.2 kg (2.6 lbs) [Lõi nhựa đặc & gỗ tự nhiên]"
+            },
+            {
+              "label": "Nguồn & điện áp",
+              "value": "Đầu vào: DC 5V / 2A (Sạc USB Type-C)"
+            },
+            {
+              "label": "Pin & sạc",
+              "value": "Pin lithium-ion tích hợp 3000mAh | Thời gian sạc: khoảng 2.5–3 giờ"
+            },
+            {
+              "label": "Thời gian hoạt động",
+              "value": "Lên đến 8–12 giờ chiếu sáng chuyển động liên tục"
+            },
+            {
+              "label": "Chất liệu chính",
+              "value": "Nhựa epoxy trong vắt cao cấp, gỗ óc chó đen tự nhiên, tượng Pokémon PVC sơn tay"
+            }
           ]
         }
       }
@@ -72,8 +118,8 @@
       "seoTitle": "Gengar | Handmade Resin Diorama Night Light | MADE IN CN",
       "seoDescription": "A hand-cast Gengar diorama night light in crystal resin and black walnut, made in China and finished by hand.",
       "note": "Each lamp is assembled, poured and finished by hand. Slight variations in the resin and grain are part of the piece. USB-C rechargeable, dynamic LED, gift packaging included.",
-      "price": 179,
-      "currency": "USD",
+      "price": 225000,
+      "currency": "VND",
       "images": [
         "/images/products/gengar/gengar-01.jpg",
         "/images/products/gengar/gengar-02.jpg",
@@ -87,17 +133,45 @@
         "/images/products/gengar/gengar-detail-03.jpg",
         "/images/products/gengar/gengar-detail-04.jpg"
       ],
-      "detailCaptions": ["On the desk", "By the bed", "In the collection", "What’s in the box"],
-      "detailCaptionsVi": ["Trên bàn làm việc", "Cạnh giường", "Trong bộ sưu tập", "Trong hộp có gì"],
+      "detailCaptions": [
+        "On the desk",
+        "By the bed",
+        "In the collection",
+        "What’s in the box"
+      ],
+      "detailCaptionsVi": [
+        "Trên bàn làm việc",
+        "Cạnh giường",
+        "Trong bộ sưu tập",
+        "Trong hộp có gì"
+      ],
       "category": "lighting",
       "collection": "pokemon",
       "specifications": [
-        { "label": "Dimensions", "value": "120mm × 120mm × 250mm (Approx. 4.7\" × 4.7\" × 9.8\")" },
-        { "label": "Net Weight", "value": "Approx. 1.2 kg (2.6 lbs) [Solid resin & natural wood core]" },
-        { "label": "Power & Voltage", "value": "Input: DC 5V / 2A (USB Type-C Rechargeable)" },
-        { "label": "Battery & Charging", "value": "3000mAh built-in lithium-ion battery | Charging time: ~2.5 to 3 hours" },
-        { "label": "Working Time", "value": "Up to 8–12 hours of continuous dynamic illumination" },
-        { "label": "Core Materials", "value": "Premium crystal-clear epoxy resin, natural black walnut wood, hand-painted PVC Pokémon figurine" }
+        {
+          "label": "Dimensions",
+          "value": "120mm × 120mm × 250mm (Approx. 4.7\" × 4.7\" × 9.8\")"
+        },
+        {
+          "label": "Net Weight",
+          "value": "Approx. 1.2 kg (2.6 lbs) [Solid resin & natural wood core]"
+        },
+        {
+          "label": "Power & Voltage",
+          "value": "Input: DC 5V / 2A (USB Type-C Rechargeable)"
+        },
+        {
+          "label": "Battery & Charging",
+          "value": "3000mAh built-in lithium-ion battery | Charging time: ~2.5 to 3 hours"
+        },
+        {
+          "label": "Working Time",
+          "value": "Up to 8–12 hours of continuous dynamic illumination"
+        },
+        {
+          "label": "Core Materials",
+          "value": "Premium crystal-clear epoxy resin, natural black walnut wood, hand-painted PVC Pokémon figurine"
+        }
       ],
       "purchaseUrl": null,
       "wooId": 331,
@@ -114,12 +188,30 @@
           "description": "Một mảnh nhỏ của thế giới bóng đêm. Gengar hiện lên từ khung cảnh mây được điêu khắc bên trong buồng nhựa resin trong vắt rót tay, đóng khung bằng gỗ óc chó đen. Ánh sáng xanh tím chuyển động quanh các nhân vật, biến căn phòng thành một khung cảnh về đêm và thành một tác phẩm điêu khắc ban ngày.",
           "note": "Mỗi chiếc đèn được lắp ráp, rót nhựa và hoàn thiện bằng tay. Những khác biệt nhỏ về nhựa và vân gỗ là một phần của tác phẩm. Sạc USB-C, đèn LED chuyển động, kèm hộp quà.",
           "specifications": [
-            { "label": "Kích thước", "value": "120mm × 120mm × 250mm (Khoảng 4.7\" × 4.7\" × 9.8\")" },
-            { "label": "Trọng lượng", "value": "Khoảng 1.2 kg (2.6 lbs) [Lõi nhựa đặc & gỗ tự nhiên]" },
-            { "label": "Nguồn & điện áp", "value": "Đầu vào: DC 5V / 2A (Sạc USB Type-C)" },
-            { "label": "Pin & sạc", "value": "Pin lithium-ion tích hợp 3000mAh | Thời gian sạc: khoảng 2.5–3 giờ" },
-            { "label": "Thời gian hoạt động", "value": "Lên đến 8–12 giờ chiếu sáng chuyển động liên tục" },
-            { "label": "Chất liệu chính", "value": "Nhựa epoxy trong vắt cao cấp, gỗ óc chó đen tự nhiên, tượng Pokémon PVC sơn tay" }
+            {
+              "label": "Kích thước",
+              "value": "120mm × 120mm × 250mm (Khoảng 4.7\" × 4.7\" × 9.8\")"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "Khoảng 1.2 kg (2.6 lbs) [Lõi nhựa đặc & gỗ tự nhiên]"
+            },
+            {
+              "label": "Nguồn & điện áp",
+              "value": "Đầu vào: DC 5V / 2A (Sạc USB Type-C)"
+            },
+            {
+              "label": "Pin & sạc",
+              "value": "Pin lithium-ion tích hợp 3000mAh | Thời gian sạc: khoảng 2.5–3 giờ"
+            },
+            {
+              "label": "Thời gian hoạt động",
+              "value": "Lên đến 8–12 giờ chiếu sáng chuyển động liên tục"
+            },
+            {
+              "label": "Chất liệu chính",
+              "value": "Nhựa epoxy trong vắt cao cấp, gỗ óc chó đen tự nhiên, tượng Pokémon PVC sơn tay"
+            }
           ]
         }
       }
@@ -193,11 +285,26 @@
       "category": "tea",
       "collection": "heritage",
       "specifications": [
-        { "label": "Origin", "value": "Dehua County, China" },
-        { "label": "Craftsmanship", "value": "Traditional Lacquer Art" },
-        { "label": "Material", "value": "Celadon Porcelain" },
-        { "label": "Handmade", "value": "Yes" },
-        { "label": "Capacity", "value": "65 ml" }
+        {
+          "label": "Origin",
+          "value": "Dehua County, China"
+        },
+        {
+          "label": "Craftsmanship",
+          "value": "Traditional Lacquer Art"
+        },
+        {
+          "label": "Material",
+          "value": "Celadon Porcelain"
+        },
+        {
+          "label": "Handmade",
+          "value": "Yes"
+        },
+        {
+          "label": "Capacity",
+          "value": "65 ml"
+        }
       ],
       "purchaseUrl": null,
       "wooId": 9564,
@@ -213,15 +320,133 @@
           "subtitle": "Chén Phúc Lộc · Lá Phong Sơn Mài Loang Màu · Sứ Thanh Hoa | Kèm Hộp Quà & Chứng Nhận",
           "description": "Sơn mài, cùng với pháp lam và đồ sứ, được tôn vinh là một trong ba tinh hoa thủ công truyền thống của Trung Hoa. Được ví như “viên ngọc đen quý giá” và “báu vật phương Đông”, nghệ thuật sơn mài thể hiện chiều sâu văn hóa cùng sự tinh xảo trong nghệ thuật chế tác thủ công Trung Hoa. Năm 2006, kỹ thuật trang trí sơn mài truyền thống chính thức được công nhận là Di sản Văn hóa Phi vật thể cấp Quốc gia của Trung Quốc. Từ khâu tuyển chọn nguyên liệu, tạo hình cốt sản phẩm đến hoàn thiện từng lớp sơn và họa tiết trang trí, mỗi tác phẩm đều phải trải qua hàng chục công đoạn tỉ mỉ. Vì vậy, để hoàn thiện một tác phẩm sơn mài có thể cần đến vài tháng.",
           "specifications": [
-            { "label": "Xuất xứ", "value": "Huyện Đức Hóa, Trung Quốc" },
-            { "label": "Kỹ thuật chế tác", "value": "Nghệ thuật sơn mài truyền thống" },
-            { "label": "Chất liệu", "value": "Sứ men thanh hoa" },
-            { "label": "Chế tác thủ công", "value": "Có" },
-            { "label": "Dung tích", "value": "65 ml" }
+            {
+              "label": "Xuất xứ",
+              "value": "Huyện Đức Hóa, Trung Quốc"
+            },
+            {
+              "label": "Kỹ thuật chế tác",
+              "value": "Nghệ thuật sơn mài truyền thống"
+            },
+            {
+              "label": "Chất liệu",
+              "value": "Sứ men thanh hoa"
+            },
+            {
+              "label": "Chế tác thủ công",
+              "value": "Có"
+            },
+            {
+              "label": "Dung tích",
+              "value": "65 ml"
+            }
           ],
           "note": "Mỗi chén đều được hoàn thiện thủ công. Họa tiết lá phong loang màu, sắc sơn mài và những biến đổi bề mặt nhỏ là duy nhất trên từng tác phẩm. Sản phẩm đi kèm hộp quà và chứng nhận. Ấm trà và khay trong ảnh chỉ dùng để minh họa, không nằm trong bộ sản phẩm."
         }
       }
+    },
+    {
+      "id": "titanium-cup",
+      "slug": "titanium-travel-cup",
+      "name": "Titanium Travel Cup",
+      "headline": "Premium Pure Titanium Insulated Travel Cup – Lightweight Portable Coffee Mug with Flip Lid, Perfect Gift for Him & Her",
+      "subtitle": "Pure titanium · Flip-top lid · Lightweight & travel-friendly",
+      "description": "A lightweight pure titanium travel cup with a flip-top PP lid, designed for coffee and tea on the move. Titanium is naturally corrosion-resistant, non-reactive and light in the hand. The insulated body keeps drinks hot or cold, while the flip lid makes one-handed sipping easy.",
+      "seoTitle": "Premium Pure Titanium Insulated Travel Cup | MADE IN CN",
+      "seoDescription": "A lightweight pure titanium travel cup with a flip-top PP lid, insulated for hot and cold drinks. Made in China, designed for everyday carry.",
+      "note": "Cleaning & care: For daily cleaning, rinse thoroughly with clean water. For a deeper clean, soak the cup in boiling water for about 30 minutes, then gently shake it for a few minutes before rinsing. For coffee or tea stains: soak in boiling water for 30 minutes, wash with a mild detergent and rinse, then wrap the cup in a clean dry paper towel and leave it undisturbed for 15 minutes. Avoid touching the exterior during this time to prevent fingerprints. For stubborn stains, contact our customer service team for the baking soda and white vinegar method. Important: do not use active-oxygen cleaning tablets or oxygen-based cleaners; do not clean in a dishwasher; avoid high-temperature drying equipment.",
+      "price": 198800,
+      "currency": "VND",
+      "images": [
+        "/images/products/titanium/2-9.jpg",
+        "/images/products/titanium/2-1.jpg",
+        "/images/products/titanium/2-2.jpg",
+        "/images/products/titanium/2-3.jpg",
+        "/images/products/titanium/2-4.jpg",
+        "/images/products/titanium/2-5.jpg",
+        "/images/products/titanium/2-6.jpg",
+        "/images/products/titanium/2-7.jpg",
+        "/images/products/titanium/2-8.jpg"
+      ],
+      "category": "gift",
+      "collection": "heritage",
+      "specifications": [
+        {
+          "label": "Main material",
+          "value": "Pure titanium"
+        },
+        {
+          "label": "Lid material",
+          "value": "PP (Polypropylene)"
+        },
+        {
+          "label": "Lid type",
+          "value": "Flip-top lid"
+        },
+        {
+          "label": "Features",
+          "value": "Easy to clean, hot & cold insulation, portable"
+        },
+        {
+          "label": "Design",
+          "value": "Lightweight & travel-friendly"
+        }
+      ],
+      "purchaseUrl": null,
+      "featured": false,
+      "availability": "enquire",
+      "year": "2026",
+      "badge": "Everyday carry",
+      "accent": "#7f8c8d",
+      "translations": {
+        "vi": {
+          "name": "Bình Giữ Nhiệt Titanium",
+          "headline": "Bình Giữ Nhiệt Titanium Nguyên Chất Cao Cấp – Ly Cà Phê Du Lịch Nhỏ Gọn, Nắp Bật Tiện Lợi, Quà Tặng Cho Nam & Nữ",
+          "subtitle": "Titanium nguyên chất · Nắp bật · Nhẹ và tiện du lịch",
+          "description": "Bình giữ nhiệt titanium nguyên chất nhẹ, có nắp bật bằng nhựa PP, dành cho cà phê và trà khi di chuyển. Titanium tự nhiên chống ăn mòn, không phản ứng với đồ uống và nhẹ trên tay. Thân bình giữ nóng hoặc lạnh, nắp bật giúp dễ dàng uống bằng một tay.",
+          "note": "Hướng dẫn vệ sinh: Hằng ngày chỉ cần tráng kỹ bằng nước sạch. Để vệ sinh kỹ hơn, ngâm bình trong nước sôi khoảng 30 phút, lắc nhẹ vài phút rồi tráng lại. Với vết cà phê hoặc trà: ngâm nước sôi 30 phút, rửa bằng dung dịch tẩy rửa dịu nhẹ và tráng sạch, sau đó bọc khăn giấy khô quanh thân bình, lau nhẹ và để yên 15 phút; tránh chạm tay vào mặt ngoài trong thời gian này. Với vết bẩn cứng đầu, vui lòng liên hệ chăm sóc khách hàng để được hướng dẫn dùng baking soda và giấm trắng. Lưu ý: không dùng viên sủi hoặc chất tẩy rửa chứa oxy hoạt tính; không vệ sinh bằng máy rửa chén; tránh thiết bị sấy nhiệt độ cao.",
+          "specifications": [
+            {
+              "label": "Chất liệu thân bình",
+              "value": "Titanium nguyên chất"
+            },
+            {
+              "label": "Chất liệu nắp",
+              "value": "Nhựa PP (Polypropylene)"
+            },
+            {
+              "label": "Kiểu nắp",
+              "value": "Nắp bật"
+            },
+            {
+              "label": "Tính năng",
+              "value": "Dễ vệ sinh, giữ nóng và giữ lạnh, tiện mang theo"
+            },
+            {
+              "label": "Thiết kế",
+              "value": "Nhẹ, nhỏ gọn, phù hợp khi di chuyển"
+            }
+          ]
+        }
+      },
+      "detailImages": [
+        "/images/products/titanium/2-10.jpg",
+        "/images/products/titanium/2-11.jpg",
+        "/images/products/titanium/2-12.jpg",
+        "/images/products/titanium/2-13.jpg"
+      ],
+      "detailCaptions": [
+        "Still life · grapes and lacquer",
+        "Suspended · a study in balance",
+        "On the shore",
+        "The gift set · cup, spoon and fork"
+      ],
+      "detailCaptionsVi": [
+        "Tĩnh vật · nho và sơn mài",
+        "Treo lơ lửng · một nghiên cứu về cân bằng",
+        "Trên bờ biển",
+        "Bộ quà tặng · bình, thìa và nĩa"
+      ]
     }
   ]
 }

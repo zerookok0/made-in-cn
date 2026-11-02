@@ -10,6 +10,7 @@ export function ProductCard({ product }: { product: Product }) {
   const { locale, t } = useI18n()
   const { addItem, openCart } = useCart()
   const collectionLabel = t(`collection.${product.collection}`)
+  const canBuy = Boolean(product.wooId) && product.availability !== 'enquire' && product.price > 0
 
   const handleAdd = () => {
     const result = addItem(product)
@@ -37,10 +38,16 @@ export function ProductCard({ product }: { product: Product }) {
           <p>{productSubtitleFor(product, locale)}</p>
         </div>
         <div className="product-bottom">
-          <strong>{formatPrice(product.price, product.currency)}</strong>
-          <button className="btn btn-small btn-primary" type="button" onClick={handleAdd}>
-            {t('common.addToCart')}
-          </button>
+          <strong>{product.price > 0 ? formatPrice(product.price, product.currency) : t('product.priceOnRequest')}</strong>
+          {canBuy ? (
+            <button className="btn btn-small btn-primary" type="button" onClick={handleAdd}>
+              {t('common.addToCart')}
+            </button>
+          ) : (
+            <AppLink className="btn btn-small btn-ghost" href={`/collection/${product.slug}`}>
+              {t('product.viewDetails')}
+            </AppLink>
+          )}
         </div>
       </div>
     </article>

@@ -7,7 +7,7 @@
   "studio": "Jingdezhen · Dehua · Shenzhen",
   "hours": "Mon–Fri, 09:00–18:00 (GMT+8)",
   "url": "https://your-domain.example",
-  "currency": "USD",
+  "currency": "VND",
   "social": [
     { "label": "TikTok", "href": "https://www.tiktok.com/" },
     { "label": "Instagram", "href": "https://www.instagram.com/" }

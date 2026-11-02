@@ -127,7 +127,7 @@ export function HomePage() {
   const copy = HOME_STATIC[locale]
   const heritage = products.find((product) => product.collection === 'heritage')
   const featured = products.filter((product) => product.featured).slice(0, 3)
-  const minUsd = Math.min(...products.filter((product) => product.currency === 'USD').map((product) => product.price))
+  const minProduct = products.reduce((min, product) => (product.price < min.price ? product : min), products[0])
 
   useDocumentMeta(t('meta.homeTitle'), t('meta.homeDesc'))
 
@@ -166,7 +166,7 @@ export function HomePage() {
             <p className="lead">{home.hero.lead}</p>
             <p className="hero-sub">{home.hero.sub}</p>
             <div className="price-line">
-              <strong>{copy.from} {formatPrice(minUsd, 'USD')}</strong>
+              <strong>{copy.from} {formatPrice(minProduct.price, minProduct.currency)}</strong>
               <span>{copy.shippingNote}</span>
             </div>
             <div className="hero-actions">

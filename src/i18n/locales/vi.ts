@@ -97,6 +97,9 @@ const vi: Dict = {
   'product.relatedEyebrow': 'Xem tiếp',
   'product.relatedTitle': 'Thêm <em>đồ vật.</em>',
   'product.specs': 'Thông số',
+  'product.priceOnRequest': 'Liên hệ báo giá',
+  'product.enquire': 'Hỏi thông tin',
+  'product.viewDetails': 'Xem chi tiết',
 
   'avail.available': 'Còn hàng',
   'avail.made-to-order': 'Đặt làm theo yêu cầu',
@@ -132,5 +135,6 @@ const vi: Dict = {
 }
 
 export default vi
+
 
 

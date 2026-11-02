@@ -11,6 +11,7 @@ import {
   productNameFor,
   specsFor,
 } from '../data/products'
+import { site } from '../data/site'
 import type { Product } from '../data/types'
 import { useI18n } from '../i18n'
 import { useCart } from '../lib/cart'
@@ -61,6 +62,7 @@ export function ProductPage({ slug }: { slug: string }) {
 
   const collection = collectionLabel(product.collection, locale)
   const available = product.availability === 'available' || product.availability === 'made-to-order'
+  const canBuy = Boolean(product.wooId) && product.availability !== 'enquire' && product.price > 0
   const related = getRelated(product)
   const detailCaptions =
     locale === 'vi' ? (product.detailCaptionsVi ?? product.detailCaptions) : product.detailCaptions
@@ -119,28 +121,42 @@ export function ProductPage({ slug }: { slug: string }) {
           <p className="product-detail-subtitle">{copy.subtitle}</p>
 
           <div className="product-detail-buyline">
-            <strong>{formatPrice(product.price, product.currency)}</strong>
+            <strong>{product.price > 0 ? formatPrice(product.price, product.currency) : t('product.priceOnRequest')}</strong>
             <span className={available ? 'stock is-available' : 'stock'}>{t(`avail.${product.availability}`)}</span>
           </div>
 
           <p className="product-detail-desc">{copy.description}</p>
 
           <div className="product-detail-actions">
-            <div className="qty product-qty">
-              <button type="button" onClick={() => setQty((value) => Math.max(1, value - 1))} aria-label="Decrease quantity">−</button>
-              <span>{qty}</span>
-              <button type="button" onClick={() => setQty((value) => Math.min(99, value + 1))} aria-label="Increase quantity">+</button>
-            </div>
-            <button className="btn btn-primary" type="button" onClick={handleAdd} disabled={!available}>
-              {t('product.add')}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M5 12h13M13 6l6 6-6 6" />
-              </svg>
-            </button>
+            {canBuy ? (
+              <>
+                <div className="qty product-qty">
+                  <button type="button" onClick={() => setQty((value) => Math.max(1, value - 1))} aria-label="Decrease quantity">−</button>
+                  <span>{qty}</span>
+                  <button type="button" onClick={() => setQty((value) => Math.min(99, value + 1))} aria-label="Increase quantity">+</button>
+                </div>
+                <button className="btn btn-primary" type="button" onClick={handleAdd} disabled={!available}>
+                  {t('product.add')}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="M5 12h13M13 6l6 6-6 6" />
+                  </svg>
+                </button>
+              </>
+            ) : (
+              <a
+                className="btn btn-primary product-enquire"
+                href={`mailto:${site.email}?subject=${encodeURIComponent(`${copy.name} — enquiry`)}`}
+              >
+                {t('product.enquire')}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            )}
           </div>
           {message && <p className="product-action-note">{message}</p>}
 
-          <p className="product-detail-note">{t('product.checkoutNote')}</p>
+          <p className="product-detail-note">{canBuy ? t('product.checkoutNote') : t('product.enquireNote')}</p>
 
           <dl className="product-specs-list">
             {copy.specs.map((spec) => (

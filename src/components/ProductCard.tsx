@@ -1,14 +1,15 @@
 import type { CSSProperties } from 'react'
 import { resolveImage } from '../data/images'
-import { collections, formatPrice } from '../data/products'
+import { formatPrice, productNameFor, productSubtitleFor } from '../data/products'
+import { useI18n } from '../i18n'
 import { useCart } from '../lib/cart'
 import type { Product } from '../data/types'
 import { AppLink } from './AppLink'
 
 export function ProductCard({ product }: { product: Product }) {
+  const { locale, t } = useI18n()
   const { addItem, openCart } = useCart()
-  const collectionLabel =
-    collections.find((item) => item.id === product.collection)?.label ?? 'MADE IN CN'
+  const collectionLabel = t(`collection.${product.collection}`)
 
   const handleAdd = () => {
     const result = addItem(product)
@@ -20,10 +21,10 @@ export function ProductCard({ product }: { product: Product }) {
       className="product-card"
       style={{ '--card-accent': product.accent ?? '#a33a2e' } as CSSProperties}
     >
-      <AppLink href={`/collection/${product.slug}`} className="product-media-link" ariaLabel={product.name}>
+      <AppLink href={`/collection/${product.slug}`} className="product-media-link" ariaLabel={productNameFor(product, locale)}>
         <div className="product-media">
-          <img src={resolveImage(product.images[0], 900)} alt={`${product.name} by MADE IN CN`} loading="lazy" />
-          <span className="product-tag">{product.badge ?? collectionLabel}</span>
+          <img src={resolveImage(product.images[0], 900)} alt={`${productNameFor(product, locale)} by MADE IN CN`} loading="lazy" />
+          <span className="product-tag">{collectionLabel}</span>
         </div>
       </AppLink>
 
@@ -31,14 +32,14 @@ export function ProductCard({ product }: { product: Product }) {
         <div>
           <p className="product-kicker">{collectionLabel}</p>
           <h3>
-            <AppLink href={`/collection/${product.slug}`}>{product.name}</AppLink>
+            <AppLink href={`/collection/${product.slug}`}>{productNameFor(product, locale)}</AppLink>
           </h3>
-          <p>{product.subtitle}</p>
+          <p>{productSubtitleFor(product, locale)}</p>
         </div>
         <div className="product-bottom">
           <strong>{formatPrice(product.price, product.currency)}</strong>
           <button className="btn btn-small btn-primary" type="button" onClick={handleAdd}>
-            Add to cart
+            {t('common.addToCart')}
           </button>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { CartDrawer } from './components/CartDrawer'
 import { SiteFooter } from './components/SiteFooter'
 import { SiteHeader } from './components/SiteHeader'
 import { CartProvider } from './lib/cart'
-import { RouterProvider, useRoute } from './lib/router'
+import { useRoute } from './lib/router'
 import { CraftPage } from './pages/CraftPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
@@ -62,9 +62,5 @@ function Shell() {
 }
 
 export default function App() {
-  return (
-    <RouterProvider>
-      <Shell />
-    </RouterProvider>
-  )
+  return <Shell />
 }

@@ -3,15 +3,16 @@ import { AppLink } from '../components/AppLink'
 import { ProductCard } from '../components/ProductCard'
 import { resolveImage } from '../data/images'
 import {
-  availabilityLabels,
-  collections,
+  collectionLabel,
   formatPrice,
   getProduct,
   getRelated,
   productDisplayTitle,
+  productNameFor,
   specsFor,
 } from '../data/products'
 import type { Product } from '../data/types'
+import { useI18n } from '../i18n'
 import { useCart } from '../lib/cart'
 import { useDocumentMeta } from '../lib/router'
 
@@ -28,11 +29,9 @@ function copyFor(product: Product, language: 'en' | 'vi') {
 }
 
 export function ProductPage({ slug }: { slug: string }) {
+  const { locale, t } = useI18n()
   const product = getProduct(slug)
   const { addItem, openCart } = useCart()
-  const [language, setLanguage] = useState<'en' | 'vi'>(() =>
-    typeof navigator !== 'undefined' && navigator.language.toLowerCase().startsWith('vi') ? 'vi' : 'en',
-  )
   const [qty, setQty] = useState(1)
   const [activeImage, setActiveImage] = useState(0)
   const [message, setMessage] = useState('')
@@ -43,28 +42,28 @@ export function ProductPage({ slug }: { slug: string }) {
     setMessage('')
   }, [slug])
 
-  const copy = product ? copyFor(product, language) : null
+  const copy = product ? copyFor(product, locale) : null
   useDocumentMeta(
-    product ? `${copy?.title ?? product.name} | MADE IN CN` : 'Piece not found | MADE IN CN',
-    product ? (product.seoDescription ?? copy?.subtitle) : 'That piece is no longer in the edit.',
+    product ? `${copy?.title ?? productNameFor(product, locale)} | MADE IN CN` : `${t('product.notFoundTitle')} | MADE IN CN`,
+    product ? (product.seoDescription ?? copy?.subtitle) : t('product.notFoundBody'),
   )
 
   if (!product || !copy) {
     return (
       <section className="missing-page">
-        <p className="eyebrow">404</p>
-        <h1>Piece not found</h1>
-        <p>That object may have moved on. Explore the current edit instead.</p>
-        <AppLink className="btn btn-primary" href="/shop">Browse the edit</AppLink>
+        <p className="eyebrow">{t('product.notFoundEyebrow')}</p>
+        <h1>{t('product.notFoundTitle')}</h1>
+        <p>{t('product.notFoundBody')}</p>
+        <AppLink className="btn btn-primary" href="/shop">{t('product.notFoundCta')}</AppLink>
       </section>
     )
   }
 
-  const collectionLabel =
-    collections.find((item) => item.id === product.collection)?.label ?? 'MADE IN CN'
-  const hasVi = Boolean(product.translations?.vi)
+  const collection = collectionLabel(product.collection, locale)
   const available = product.availability === 'available' || product.availability === 'made-to-order'
   const related = getRelated(product)
+  const detailCaptions =
+    locale === 'vi' ? (product.detailCaptionsVi ?? product.detailCaptions) : product.detailCaptions
 
   const handleAdd = () => {
     setMessage('')
@@ -73,17 +72,17 @@ export function ProductPage({ slug }: { slug: string }) {
       openCart()
       return
     }
-    if (result === 'unavailable') setMessage('This piece is currently available by enquiry.')
-    else if (result === 'no-store-id') setMessage('Checkout is not connected for this piece yet.')
-    else setMessage('Please choose a size before adding to cart.')
+    if (result === 'unavailable') setMessage(t('product.enquireNote'))
+    else if (result === 'no-store-id') setMessage(t('product.storeNote'))
+    else setMessage(t('product.sizeNote'))
   }
 
   return (
     <div className="product-page">
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <AppLink href="/">Home</AppLink>
+        <AppLink href="/">{t('product.breadcrumbHome')}</AppLink>
         <span>/</span>
-        <AppLink href="/shop">Shop</AppLink>
+        <AppLink href="/shop">{t('product.breadcrumbShop')}</AppLink>
         <span>/</span>
         <span aria-current="page">{copy.name}</span>
       </nav>
@@ -92,13 +91,7 @@ export function ProductPage({ slug }: { slug: string }) {
         <div className="product-gallery">
           <div className="product-detail-media">
             <img src={resolveImage(product.images[activeImage], 1600)} alt={`${copy.name} view ${activeImage + 1}`} />
-            <span className="product-detail-badge">{product.badge ?? collectionLabel}</span>
-            {hasVi && (
-              <div className="lang-switch product-lang" role="group" aria-label="Product language">
-                <button type="button" className={language === 'en' ? 'is-active' : ''} onClick={() => setLanguage('en')} aria-pressed={language === 'en'}>EN</button>
-                <button type="button" className={language === 'vi' ? 'is-active' : ''} onClick={() => setLanguage('vi')} aria-pressed={language === 'vi'}>VI</button>
-              </div>
-            )}
+            <span className="product-detail-badge">{collection}</span>
           </div>
 
           {product.images.length > 1 && (
@@ -121,13 +114,13 @@ export function ProductPage({ slug }: { slug: string }) {
         </div>
 
         <div className="product-detail-info">
-          <p className="eyebrow">{collectionLabel} · {product.year}</p>
+          <p className="eyebrow">{collection} · {product.year}</p>
           <h1>{copy.title}</h1>
           <p className="product-detail-subtitle">{copy.subtitle}</p>
 
           <div className="product-detail-buyline">
             <strong>{formatPrice(product.price, product.currency)}</strong>
-            <span className={available ? 'stock is-available' : 'stock'}>{availabilityLabels[product.availability]}</span>
+            <span className={available ? 'stock is-available' : 'stock'}>{t(`avail.${product.availability}`)}</span>
           </div>
 
           <p className="product-detail-desc">{copy.description}</p>
@@ -139,7 +132,7 @@ export function ProductPage({ slug }: { slug: string }) {
               <button type="button" onClick={() => setQty((value) => Math.min(99, value + 1))} aria-label="Increase quantity">+</button>
             </div>
             <button className="btn btn-primary" type="button" onClick={handleAdd} disabled={!available}>
-              Add to cart
+              {t('product.add')}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M5 12h13M13 6l6 6-6 6" />
               </svg>
@@ -147,9 +140,7 @@ export function ProductPage({ slug }: { slug: string }) {
           </div>
           {message && <p className="product-action-note">{message}</p>}
 
-          <p className="product-detail-note">
-            Checkout is handled by our WooCommerce store. Add a piece to your cart to continue.
-          </p>
+          <p className="product-detail-note">{t('product.checkoutNote')}</p>
 
           <dl className="product-specs-list">
             {copy.specs.map((spec) => (
@@ -168,13 +159,13 @@ export function ProductPage({ slug }: { slug: string }) {
         <section className="product-detail-gallery" aria-labelledby="detail-gallery-title">
           <div className="section-head">
             <div>
-              <p className="eyebrow">In the hand</p>
-              <h2 id="detail-gallery-title">Every detail, <em>considered.</em></h2>
+              <p className="eyebrow">{t('product.inTheHand')}</p>
+              <h2 id="detail-gallery-title">{t('product.detailTitle1')} <em>{t('product.detailTitle2')}</em></h2>
             </div>
           </div>
           <div className="detail-gallery-grid">
             {product.detailImages.map((image, index) => {
-              const caption = product.detailCaptions?.[index] ?? `Detail ${index + 1}`
+              const caption = detailCaptions?.[index] ?? `Detail ${index + 1}`
               return (
                 <figure className="detail-gallery-item" key={image}>
                   <img src={resolveImage(image, 1000)} alt={`${copy.name} — ${caption}`} loading="lazy" />
@@ -190,8 +181,8 @@ export function ProductPage({ slug }: { slug: string }) {
         <section className="product-related">
           <div className="section-head">
             <div>
-              <p className="eyebrow">Keep looking</p>
-              <h2>More <em>objects.</em></h2>
+              <p className="eyebrow">{t('product.relatedEyebrow')}</p>
+              <h2>{t('product.relatedTitle1')} <em>{t('product.relatedTitle2')}</em></h2>
             </div>
           </div>
           <div className="product-grid">

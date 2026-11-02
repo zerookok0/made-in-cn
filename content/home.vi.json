@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "kicker": "Sản xuất tại Trung Quốc · trực tiếp từ xưởng",
+    "titleLine1": "Đồ vật làm tại Trung Quốc.",
+    "titleLine2": "Được chọn bằng tay.",
+    "lead": "Một tuyển chọn nhỏ từ chính những xưởng làm ra chúng. Đèn resin đúc tay và trà cụ sơn mài thủ công — không qua trung gian, không người bán bí ẩn.",
+    "sub": "Từ sứ men thanh hoa Đức Hóa đến resin pha lê, mỗi món đều mang dấu tay của người làm.",
+    "ctaPrimary": "Xem tuyển chọn",
+    "ctaSecondary": "Gặp người làm"
+  },
+  "maker": {
+    "eyebrow": "Góc nhìn của chúng tôi",
+    "titleLine1": "Chúng tôi đến xưởng.",
+    "titleLine2": "Không phải chợ trực tuyến.",
+    "body": "MADE IN CN là một tuyển chọn nhỏ những món đồ có thể truy nguyên đến một người và một nơi chốn. Chúng tôi làm việc trực tiếp với xưởng, gọi tên người làm và cho thấy quá trình — vì “made in China” phải là điều có thể cảm nhận được.",
+    "cta": "Đọc ghi chép nghề"
+  },
+  "shop": {
+    "eyebrow": "Tuyển chọn",
+    "title": "Ba món đồ. Ba người làm.",
+    "note": "Đèn sưu tầm từ một xưởng resin ở Thâm Quyến, và chén sơn mài của nghệ nhân Lin Jianjun tại Đức Hóa.",
+    "cta": "Xem tất cả"
+  },
+  "heritage": {
+    "eyebrow": "Mới · Bộ sưu tập Di sản",
+    "titleLine1": "Một chiếc lá phong.",
+    "titleLine2": "Nhiều tháng công phu.",
+    "body": "Nghệ nhân Lin Jianjun thả một chiếc lá phong thật qua từng lớp sơn mài, rồi hoàn thiện lòng chén bằng men thanh hóa nhạt. Mỗi chén được tạo hình, ủ và đánh bóng bằng tay tại Đức Hóa — và đến tay bạn trong hộp quà vừa vặn cùng chứng nhận.",
+    "cta": "Xem chiếc chén"
+  },
+  "compare": {
+    "eyebrow": "Vì sao mua trực tiếp",
+    "title": "Bỏ qua trung gian.",
+    "note": "Không người bán bí ẩn. Không giá chợ trực tuyến.",
+    "rows": [
+      { "label": "Làm tại xưởng đối tác", "direct": "Có", "market": "Bán lại" },
+      { "label": "Nêu tên người làm và quy trình", "direct": "Luôn luôn", "market": "Thường ẩn" },
+      { "label": "Hỗ trợ bởi người thật", "direct": "WhatsApp", "market": "Chatbot" },
+      { "label": "Đợt hàng độc quyền", "direct": "Trực tiếp", "market": "Hàng phổ thông" }
+    ]
+  },
+  "bundle": {
+    "eyebrow": "Cặp đôi sưu tầm",
+    "titleLine1": "Một kệ.",
+    "titleLine2": "Hai thế giới.",
+    "body": "Pikachu và Gengar cùng nhau — một ánh sáng ấm và một chút nửa đêm. Cả hai đều đến trong bao bì sưu tầm.",
+    "cta": "Thêm cả hai vào giỏ"
+  },
+  "closing": {
+    "eyebrow": "MADE IN CN",
+    "titleLine1": "Làm ở đây.",
+    "titleLine2": "Giữ được nhiều năm.",
+    "body": "Một tuyển chọn nhỏ những món đồ có người làm, có chất liệu và có lý do để giữ lại.",
+    "ctaPrimary": "Xem tuyển chọn",
+    "ctaSecondary": "Đọc ghi chép nghề"
+  }
+}

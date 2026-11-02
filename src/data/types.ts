@@ -40,6 +40,7 @@ export interface Product {
   images: string[]
   detailImages?: string[]
   detailCaptions?: string[]
+  detailCaptionsVi?: string[]
   category: CategoryId
   collection: CollectionId
   specifications: SpecItem[]

@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { resolveImage } from '../data/images'
-import { formatPrice, products } from '../data/products'
+import { formatPrice, productNameFor, productSubtitleFor, products } from '../data/products'
 import { navigation, site } from '../data/site'
+import { useI18n } from '../i18n'
 import { useCart } from '../lib/cart'
 import { AppLink } from './AppLink'
+import { LanguageSwitcher } from './LanguageSwitcher'
 import { useEscape, useRoute, useScrollLock } from '../lib/router'
 
 function SearchIcon() {
@@ -42,6 +44,7 @@ function CloseIcon() {
 
 export function SiteHeader() {
   const route = useRoute()
+  const { locale, t } = useI18n()
   const { count, openCart } = useCart()
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -75,6 +78,15 @@ export function SiteHeader() {
     return new URLSearchParams(search).get('collection') === route.query.get('collection')
   }
 
+  const navLabel = (href: string, fallback: string) => {
+    if (href === '/') return t('nav.home')
+    if (href === '/craft') return t('nav.craft')
+    if (href.startsWith('mailto:')) return t('nav.contact')
+    if (href.includes('collection=heritage')) return t('nav.heritage')
+    if (href === '/shop') return t('nav.shop')
+    return fallback
+  }
+
   return (
     <>
       <header className="topbar">
@@ -87,28 +99,34 @@ export function SiteHeader() {
             </span>
           </AppLink>
 
-          <nav className="nav" aria-label="Primary">
+          <nav className="nav" aria-label={t('nav.primaryAria')}>
             {navigation.map((item) => (
               <AppLink
                 key={`${item.label}-${item.href}`}
                 href={item.href}
                 className={isActive(item.href) ? 'is-active' : ''}
               >
-                {item.label}
+                {navLabel(item.href, item.label)}
               </AppLink>
             ))}
           </nav>
 
           <div className="top-actions">
             <span className="made-pill">中国制造 · direct</span>
-            <button className="cart-button" type="button" onClick={() => setSearchOpen(true)} aria-label="Search">
+            <LanguageSwitcher />
+            <button className="cart-button" type="button" onClick={() => setSearchOpen(true)} aria-label={t('header.searchAria')}>
               <SearchIcon />
             </button>
-            <button className="cart-button" type="button" onClick={openCart} aria-label="Open cart">
+            <button
+              className="cart-button"
+              type="button"
+              onClick={openCart}
+              aria-label={count > 0 ? t('header.cartAria', { count }) : t('header.cartAriaEmpty')}
+            >
               <CartIcon />
               {count > 0 && <span>{count > 99 ? '99+' : count}</span>}
             </button>
-            <button className="cart-button menu-button" type="button" onClick={() => setMenuOpen(true)} aria-label="Open menu">
+            <button className="cart-button menu-button" type="button" onClick={() => setMenuOpen(true)} aria-label={t('header.openMenu')}>
               <MenuIcon />
             </button>
           </div>
@@ -116,18 +134,18 @@ export function SiteHeader() {
       </header>
 
       <div className={`mobile-menu ${menuOpen ? 'is-open' : ''}`} aria-hidden={!menuOpen}>
-        <button className="mobile-close" type="button" onClick={() => setMenuOpen(false)} aria-label="Close menu">
+        <button className="mobile-close" type="button" onClick={() => setMenuOpen(false)} aria-label={t('header.closeMenu')}>
           <CloseIcon />
         </button>
         <span className="brand-seal" aria-hidden="true">中</span>
-        <nav aria-label="Mobile">
+        <nav aria-label={t('nav.mobileAria')}>
           {navigation.map((item) => (
             <AppLink key={`${item.label}-${item.href}`} href={item.href} onClick={() => setMenuOpen(false)}>
-              {item.label}
+              {navLabel(item.href, item.label)}
             </AppLink>
           ))}
         </nav>
-        <p>{site.tagline}</p>
+        <p>{t('site.tagline')}</p>
       </div>
 
       <div className={`search-panel ${searchOpen ? 'is-open' : ''}`} aria-hidden={!searchOpen}>
@@ -135,18 +153,18 @@ export function SiteHeader() {
           <SearchIcon />
           <input
             type="search"
-            placeholder="Search lamps, tea ware, makers…"
+            placeholder={t('header.searchPlaceholder')}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            aria-label="Search products"
+            aria-label={t('header.searchAria')}
           />
-          <button className="search-close" type="button" onClick={() => setSearchOpen(false)} aria-label="Close search">
+          <button className="search-close" type="button" onClick={() => setSearchOpen(false)} aria-label={t('header.searchClose')}>
             <CloseIcon />
           </button>
         </div>
         <div className="search-results">
           {results.length === 0 ? (
-            <p className="search-empty">No pieces matched “{query}”.</p>
+            <p className="search-empty">{t('header.searchEmpty', { query })}</p>
           ) : (
             results.map((product) => (
               <AppLink
@@ -157,8 +175,8 @@ export function SiteHeader() {
               >
                 <img src={resolveImage(product.images[0], 160)} alt="" />
                 <span>
-                  <strong>{product.name}</strong>
-                  <small>{product.subtitle}</small>
+                  <strong>{productNameFor(product, locale)}</strong>
+                  <small>{productSubtitleFor(product, locale)}</small>
                 </span>
                 <b>{formatPrice(product.price, product.currency)}</b>
               </AppLink>

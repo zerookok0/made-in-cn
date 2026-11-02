@@ -64,3 +64,25 @@ export function productNameFor(product: Product, language: 'en' | 'vi'): string 
   if (language === 'vi' && product.translations?.vi?.name) return product.translations.vi.name
   return product.name
 }
+
+export function productSubtitleFor(product: Product, language: 'en' | 'vi'): string {
+  if (language === 'vi' && product.translations?.vi?.subtitle) return product.translations.vi.subtitle
+  return product.subtitle
+}
+
+export function categoryLabel(id: CategoryId, language: 'en' | 'vi'): string {
+  const labels: Record<CategoryId, { en: string; vi: string }> = {
+    lighting: { en: 'Lighting', vi: 'Đèn' },
+    tea: { en: 'Tea & ritual', vi: 'Trà & nghi lễ' },
+    gift: { en: 'Gifts', vi: 'Quà tặng' },
+  }
+  return labels[id][language]
+}
+
+export function collectionLabel(id: CollectionId, language: 'en' | 'vi'): string {
+  const labels: Record<CollectionId, { en: string; vi: string }> = {
+    pokemon: { en: 'Pokémon Artisan', vi: 'Pokémon Artisan' },
+    heritage: { en: 'Heritage', vi: 'Di sản' },
+  }
+  return labels[id][language]
+}

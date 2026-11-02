@@ -1,17 +1,19 @@
 import { AppLink } from '../components/AppLink'
+import { useI18n } from '../i18n'
 import { useDocumentMeta } from '../lib/router'
 
 export function NotFoundPage() {
-  useDocumentMeta('Page not found — MADE IN CN')
+  const { t } = useI18n()
+  useDocumentMeta(`${t('notfound.title')} — MADE IN CN`)
 
   return (
     <section className="missing-page">
-      <p className="eyebrow">404</p>
-      <h1>This page is not in the edit.</h1>
-      <p>The link may be old, or the object may have moved on.</p>
+      <p className="eyebrow">{t('notfound.eyebrow')}</p>
+      <h1>{t('notfound.title')}</h1>
+      <p>{t('notfound.body')}</p>
       <div className="missing-actions">
-        <AppLink className="btn btn-primary" href="/shop">Browse the shop</AppLink>
-        <AppLink className="btn btn-ghost" href="/">Back home</AppLink>
+        <AppLink className="btn btn-primary" href="/shop">{t('notfound.shop')}</AppLink>
+        <AppLink className="btn btn-ghost" href="/">{t('notfound.home')}</AppLink>
       </div>
     </section>
   )

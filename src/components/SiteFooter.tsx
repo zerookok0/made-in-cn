@@ -1,9 +1,20 @@
 import { useState } from 'react'
 import { site } from '../data/site'
+import { useI18n } from '../i18n'
 import { AppLink } from './AppLink'
 
 export function SiteFooter() {
+  const { t } = useI18n()
   const [subscribed, setSubscribed] = useState(false)
+  const policyLabel = (label: string) => {
+    const labels: Record<string, string> = {
+      'Shipping & returns': t('footer.shipping'),
+      'Craft & care': t('footer.craftCare'),
+      Privacy: t('footer.privacy'),
+      Terms: t('footer.terms'),
+    }
+    return labels[label] ?? label
+  }
 
   return (
     <footer className="footer">
@@ -15,28 +26,28 @@ export function SiteFooter() {
             <small>{site.brandCn}</small>
           </span>
         </AppLink>
-        <p>{site.tagline}</p>
+        <p>{t('site.tagline')}</p>
       </div>
 
       <div className="footer-grid">
         <div className="footer-column">
-          <h4>Shop</h4>
-          <AppLink href="/shop">All objects</AppLink>
-          <AppLink href="/shop?collection=pokemon">Pokémon Artisan</AppLink>
-          <AppLink href="/shop?collection=heritage">Heritage</AppLink>
-          <AppLink href="/collection/fu-lu-cup">Fu Lu tea cup</AppLink>
+          <h4>{t('footer.shop')}</h4>
+          <AppLink href="/shop">{t('common.shopAll')}</AppLink>
+          <AppLink href="/shop?collection=pokemon">{t('collection.pokemon')}</AppLink>
+          <AppLink href="/shop?collection=heritage">{t('collection.heritage')}</AppLink>
+          <AppLink href="/collection/fu-lu-cup">{t('footer.fuLu')}</AppLink>
         </div>
 
         <div className="footer-column">
-          <h4>Studio</h4>
-          <AppLink href="/craft">Our craft</AppLink>
-          <AppLink href="/craft">Materials & makers</AppLink>
-          <AppLink href="/craft">Shipping & returns</AppLink>
-          <AppLink href={`mailto:${site.email}`}>Contact</AppLink>
+          <h4>{t('footer.studio')}</h4>
+          <AppLink href="/craft">{t('nav.craft')}</AppLink>
+          <AppLink href="/craft">{t('footer.materials')}</AppLink>
+          <AppLink href="/craft">{t('footer.shipping')}</AppLink>
+          <AppLink href={`mailto:${site.email}`}>{t('nav.contact')}</AppLink>
         </div>
 
         <div className="footer-column">
-          <h4>Connect</h4>
+          <h4>{t('footer.connect')}</h4>
           {site.social.map((item) => (
             <a key={item.label} href={item.href} target="_blank" rel="noreferrer">
               {item.label}
@@ -46,10 +57,10 @@ export function SiteFooter() {
         </div>
 
         <div className="footer-news">
-          <h4>Studio notes</h4>
-          <p>New makers, restocks and the occasional workshop story. No spam.</p>
+          <h4>{t('footer.notes')}</h4>
+          <p>{t('footer.notesBody')}</p>
           {subscribed ? (
-            <p className="footer-contact">You’re on the list.</p>
+            <p className="footer-contact">{t('footer.onList')}</p>
           ) : (
             <form
               className="news-form"
@@ -58,8 +69,8 @@ export function SiteFooter() {
                 setSubscribed(true)
               }}
             >
-              <input type="email" placeholder="Email address" aria-label="Email address" required />
-              <button type="submit" aria-label="Subscribe">
+              <input type="email" placeholder={t('footer.emailPlaceholder')} aria-label={t('footer.emailPlaceholder')} required />
+              <button type="submit" aria-label={t('footer.subscribe')}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h13M13 6l6 6-6 6" />
                 </svg>
@@ -71,19 +82,17 @@ export function SiteFooter() {
 
       <div className="footer-links footer-links--legal">
         {site.policies.map((item) => (
-          <AppLink key={item.label} href={item.href}>{item.label}</AppLink>
+          <AppLink key={item.label} href={item.href}>{policyLabel(item.label)}</AppLink>
         ))}
-        <AppLink href="/admin">Content studio</AppLink>
+        <AppLink href="/admin">{t('footer.admin')}</AppLink>
       </div>
 
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} {site.brand}. All rights reserved.</span>
+        <span>{t('footer.rights', { year: new Date().getFullYear(), brand: site.brand })}</span>
         <span>{site.studio} · {site.hours}</span>
       </div>
 
-      <p className="footer-note">
-        Concept storefront for {site.brand}. Product copy, availability and checkout settings are managed in the content studio.
-      </p>
+      <p className="footer-note">{t('footer.note', { brand: site.brand })}</p>
     </footer>
   )
 }

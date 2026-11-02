@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { AppLink } from '../components/AppLink'
 import { ProductCard } from '../components/ProductCard'
-import { categories, collections, products } from '../data/products'
+import { categories, categoryLabel, collectionLabel, collections, products } from '../data/products'
 import type { CategoryId, CollectionId } from '../data/types'
+import { useI18n } from '../i18n'
 import { useDocumentMeta, useRoute } from '../lib/router'
 
 type CollectionFilter = 'all' | CollectionId
@@ -10,6 +11,7 @@ type CategoryFilter = 'all' | CategoryId
 
 export function ShopPage() {
   const route = useRoute()
+  const { locale, t } = useI18n()
   const [collection, setCollection] = useState<CollectionFilter>('all')
   const [category, setCategory] = useState<CategoryFilter>('all')
   const [query, setQuery] = useState('')
@@ -20,7 +22,7 @@ export function ShopPage() {
     else if (route.path === '/shop') setCollection('all')
   }, [route.path, route.query])
 
-  useDocumentMeta('Shop all objects — MADE IN CN', 'A small edit of objects made in China: resin lamps and handmade lacquer tea ware.')
+  useDocumentMeta(t('meta.shopTitle'), t('meta.shopDesc'))
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase()
@@ -37,11 +39,11 @@ export function ShopPage() {
   return (
     <div className="shop-page">
       <div className="shop-head">
-        <p className="eyebrow">The edit</p>
+        <p className="eyebrow">{t('shop.eyebrow')}</p>
         <h1>
-          Objects with <em>a maker.</em>
+          {t('shop.title1')} <em>{t('shop.title2')}</em>
         </h1>
-        <p>A short list, chosen for material, handwork and the reason to keep it.</p>
+        <p>{t('shop.lede')}</p>
       </div>
 
       <div className="shop-toolbar">
@@ -52,21 +54,21 @@ export function ShopPage() {
           </svg>
           <input
             type="search"
-            placeholder="Search the edit"
+            placeholder={t('shop.search')}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            aria-label="Search the shop"
+            aria-label={t('shop.search')}
           />
         </label>
         <span className="shop-count">
-          {filtered.length} piece{filtered.length === 1 ? '' : 's'}
+          {t(filtered.length === 1 ? 'shop.count' : 'shop.countPlural', { count: filtered.length })}
         </span>
       </div>
 
       <div className="shop-filters">
         <div className="filter-group" role="group" aria-label="Collection">
           <button type="button" className={collection === 'all' ? 'is-active' : ''} onClick={() => setCollection('all')}>
-            All
+            {t('shop.all')}
           </button>
           {collections.map((item) => (
             <button
@@ -75,13 +77,13 @@ export function ShopPage() {
               className={collection === item.id ? 'is-active' : ''}
               onClick={() => setCollection(item.id)}
             >
-              {item.label}
+              {collectionLabel(item.id, locale)}
             </button>
           ))}
         </div>
         <div className="filter-group" role="group" aria-label="Category">
           <button type="button" className={category === 'all' ? 'is-active' : ''} onClick={() => setCategory('all')}>
-            Every object
+            {t('shop.everyObject')}
           </button>
           {categories.map((item) => (
             <button
@@ -90,7 +92,7 @@ export function ShopPage() {
               className={category === item.id ? 'is-active' : ''}
               onClick={() => setCategory(item.id)}
             >
-              {item.label}
+              {categoryLabel(item.id, locale)}
             </button>
           ))}
         </div>
@@ -98,8 +100,8 @@ export function ShopPage() {
 
       {filtered.length === 0 ? (
         <div className="shop-empty">
-          <h2>Nothing here yet</h2>
-          <p>Try another collection or clear the search.</p>
+          <h2>{t('shop.emptyTitle')}</h2>
+          <p>{t('shop.emptyBody')}</p>
           <button
             className="btn btn-primary"
             type="button"
@@ -109,7 +111,7 @@ export function ShopPage() {
               setCollection('all')
             }}
           >
-            Show everything
+            {t('shop.emptyCta')}
           </button>
         </div>
       ) : (
@@ -121,7 +123,7 @@ export function ShopPage() {
       )}
 
       <div className="shop-back">
-        <AppLink className="btn btn-ghost btn-small" href="/">Back to home</AppLink>
+        <AppLink className="btn btn-ghost btn-small" href="/">{t('shop.backHome')}</AppLink>
       </div>
     </div>
   )

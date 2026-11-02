@@ -1,0 +1,146 @@
+{
+  "products": [
+    {
+      "id": "pikachu",
+      "slug": "pikachu",
+      "name": "Pikachu",
+      "headline": "Pikachu | Pokémon Artisan Resin Diorama Night Light — Collector’s Edition",
+      "subtitle": "Electric Gold · Collector’s Edition",
+      "description": "Designed for collectors and gaming enthusiasts, the Pokémon Artisan Diorama Lamp transcends traditional decor. Each piece is hand-cast in premium crystal-clear epoxy resin and framed by natural black walnut wood. Dynamic flowing light brings iconic moments to life in 3D depth — an ambient art sculpture by day, a living illumination source by night.",
+      "seoTitle": "Pikachu | Handmade Resin Diorama Night Light | MADE IN CN",
+      "seoDescription": "A hand-cast Pikachu diorama night light in crystal resin and black walnut, made in China and finished by hand.",
+      "note": "Each lamp is assembled, poured and finished by hand. Slight variations in the resin and grain are part of the piece. USB-C rechargeable, warm dimmable LED, gift packaging included.",
+      "price": 189,
+      "currency": "USD",
+      "images": [
+        "/images/products/pikachu/pikachu-01.jpg",
+        "/images/products/pikachu/pikachu-02.jpg",
+        "/images/products/pikachu/pikachu-03.jpg",
+        "/images/products/pikachu/pikachu-04.jpg",
+        "/images/products/pikachu/pikachu-05.jpg"
+      ],
+      "detailImages": [
+        "/images/products/pikachu/pikachu-detail-01.jpg",
+        "/images/products/pikachu/pikachu-detail-02.jpg",
+        "/images/products/pikachu/pikachu-detail-03.jpg",
+        "/images/products/pikachu/pikachu-detail-04.jpg"
+      ],
+      "detailCaptions": ["On the desk", "By the bed", "In the collection", "What’s in the box"],
+      "category": "lighting",
+      "collection": "pokemon",
+      "specifications": [
+        { "label": "Dimensions", "value": "120mm × 120mm × 250mm (Approx. 4.7\" × 4.7\" × 9.8\")" },
+        { "label": "Net Weight", "value": "Approx. 1.2 kg (2.6 lbs) [Solid resin & natural wood core]" },
+        { "label": "Power & Voltage", "value": "Input: DC 5V / 2A (USB Type-C Rechargeable)" },
+        { "label": "Battery & Charging", "value": "3000mAh built-in lithium-ion battery | Charging time: ~2.5 to 3 hours" },
+        { "label": "Working Time", "value": "Up to 8–12 hours of continuous dynamic illumination" },
+        { "label": "Core Materials", "value": "Premium crystal-clear epoxy resin, natural black walnut wood, hand-painted PVC Pokémon figurine" }
+      ],
+      "purchaseUrl": null,
+      "wooId": 2480,
+      "featured": true,
+      "availability": "available",
+      "year": "2026",
+      "badge": "Pokémon Artisan",
+      "accent": "#b4833e"
+    },
+    {
+      "id": "gengar",
+      "slug": "gengar",
+      "name": "Gengar",
+      "headline": "Gengar | Pokémon Artisan Resin Diorama Night Light — Collector’s Edition",
+      "subtitle": "Phantom Purple · Collector’s Edition",
+      "description": "A little piece of the phantom world. Gengar rises from a sculpted cloudscape inside a hand-poured crystal resin chamber, framed in black walnut. Dynamic blue-violet light drifts around the figures, turning the room into a scene by night and a sculptural object by day.",
+      "seoTitle": "Gengar | Handmade Resin Diorama Night Light | MADE IN CN",
+      "seoDescription": "A hand-cast Gengar diorama night light in crystal resin and black walnut, made in China and finished by hand.",
+      "note": "Each lamp is assembled, poured and finished by hand. Slight variations in the resin and grain are part of the piece. USB-C rechargeable, dynamic LED, gift packaging included.",
+      "price": 179,
+      "currency": "USD",
+      "images": [
+        "/images/products/gengar/gengar-01.jpg",
+        "/images/products/gengar/gengar-02.jpg",
+        "/images/products/gengar/gengar-03.jpg",
+        "/images/products/gengar/gengar-04.jpg",
+        "/images/products/gengar/gengar-05.jpg"
+      ],
+      "detailImages": [
+        "/images/products/gengar/gengar-detail-01.jpg",
+        "/images/products/gengar/gengar-detail-02.jpg",
+        "/images/products/gengar/gengar-detail-03.jpg",
+        "/images/products/gengar/gengar-detail-04.jpg"
+      ],
+      "detailCaptions": ["On the desk", "By the bed", "In the collection", "What’s in the box"],
+      "category": "lighting",
+      "collection": "pokemon",
+      "specifications": [
+        { "label": "Dimensions", "value": "120mm × 120mm × 250mm (Approx. 4.7\" × 4.7\" × 9.8\")" },
+        { "label": "Net Weight", "value": "Approx. 1.2 kg (2.6 lbs) [Solid resin & natural wood core]" },
+        { "label": "Power & Voltage", "value": "Input: DC 5V / 2A (USB Type-C Rechargeable)" },
+        { "label": "Battery & Charging", "value": "3000mAh built-in lithium-ion battery | Charging time: ~2.5 to 3 hours" },
+        { "label": "Working Time", "value": "Up to 8–12 hours of continuous dynamic illumination" },
+        { "label": "Core Materials", "value": "Premium crystal-clear epoxy resin, natural black walnut wood, hand-painted PVC Pokémon figurine" }
+      ],
+      "purchaseUrl": null,
+      "wooId": 331,
+      "featured": true,
+      "availability": "available",
+      "year": "2026",
+      "badge": "Pokémon Artisan",
+      "accent": "#6d5273"
+    },
+    {
+      "id": "9564",
+      "slug": "fu-lu-cup",
+      "name": "Fu Lu Lacquer Tea Cup",
+      "headline": "Master Lin Jianjun Handmade Lacquer Maple Leaf Fu Lu Tea Cup",
+      "subtitle": "Fu Lu Cup · Floating Lacquer Maple Leaf · Celadon | Gift Box & Certificate Included",
+      "description": "Alongside cloisonné enamel and porcelain, lacquerware is celebrated as one of China’s Three Great Traditional Crafts. Often described as a precious black gem and an Eastern treasure, this ancient art represents the refinement and heritage of Chinese craftsmanship. In 2006, traditional lacquer decoration techniques were officially recognized as part of China’s National Intangible Cultural Heritage. From selecting raw materials and shaping the base to applying decorative lacquer finishes, each piece undergoes dozens of intricate processes. Completing a single lacquerware piece can take several months.",
+      "seoTitle": "Handmade Lacquer Maple Leaf Tea Cup | Master Lin Jianjun | MADE IN CN",
+      "seoDescription": "A handmade Fu Lu tea cup by Master Lin Jianjun, with a floating lacquer maple leaf and celadon interior. Gift box and certificate included.",
+      "note": "Every cup is finished by hand. The floating maple leaf pattern, lacquer tones and subtle surface variations are unique to each piece. Gift box and certificate included. The teapot and tray in styling images are not included.",
+      "price": 22890,
+      "currency": "VND",
+      "images": [
+        "/images/products/9564/1-1.jpg",
+        "/images/products/9564/1-3.jpg",
+        "/images/products/9564/1-5.jpg",
+        "/images/products/9564/1-6.jpg",
+        "/images/products/9564/1-4.jpg",
+        "/images/products/9564/1-7.jpg",
+        "/images/products/9564/1-2.jpg"
+      ],
+      "category": "tea",
+      "collection": "heritage",
+      "specifications": [
+        { "label": "Origin", "value": "Dehua County, China" },
+        { "label": "Craftsmanship", "value": "Traditional Lacquer Art" },
+        { "label": "Material", "value": "Celadon Porcelain" },
+        { "label": "Handmade", "value": "Yes" },
+        { "label": "Capacity", "value": "65 ml" }
+      ],
+      "purchaseUrl": null,
+      "wooId": 9564,
+      "featured": true,
+      "availability": "available",
+      "year": "2026",
+      "badge": "Heritage",
+      "accent": "#b4833e",
+      "translations": {
+        "vi": {
+          "name": "Chén Trà Phúc Lộc Lá Phong Sơn Mài Thủ Công",
+          "headline": "Chén Trà Phúc Lộc Lá Phong Sơn Mài Thủ Công – Nghệ Nhân Lin Jianjun",
+          "subtitle": "Chén Phúc Lộc · Lá Phong Sơn Mài Loang Màu · Sứ Thanh Hoa | Kèm Hộp Quà & Chứng Nhận",
+          "description": "Sơn mài, cùng với pháp lam và đồ sứ, được tôn vinh là một trong ba tinh hoa thủ công truyền thống của Trung Hoa. Được ví như “viên ngọc đen quý giá” và “báu vật phương Đông”, nghệ thuật sơn mài thể hiện chiều sâu văn hóa cùng sự tinh xảo trong nghệ thuật chế tác thủ công Trung Hoa. Năm 2006, kỹ thuật trang trí sơn mài truyền thống chính thức được công nhận là Di sản Văn hóa Phi vật thể cấp Quốc gia của Trung Quốc. Từ khâu tuyển chọn nguyên liệu, tạo hình cốt sản phẩm đến hoàn thiện từng lớp sơn và họa tiết trang trí, mỗi tác phẩm đều phải trải qua hàng chục công đoạn tỉ mỉ. Vì vậy, để hoàn thiện một tác phẩm sơn mài có thể cần đến vài tháng.",
+          "specifications": [
+            { "label": "Xuất xứ", "value": "Huyện Đức Hóa, Trung Quốc" },
+            { "label": "Kỹ thuật chế tác", "value": "Nghệ thuật sơn mài truyền thống" },
+            { "label": "Chất liệu", "value": "Sứ men thanh hoa" },
+            { "label": "Chế tác thủ công", "value": "Có" },
+            { "label": "Dung tích", "value": "65 ml" }
+          ],
+          "note": "Mỗi chén đều được hoàn thiện thủ công. Họa tiết lá phong loang màu, sắc sơn mài và những biến đổi bề mặt nhỏ là duy nhất trên từng tác phẩm. Sản phẩm đi kèm hộp quà và chứng nhận. Ấm trà và khay trong ảnh chỉ dùng để minh họa, không nằm trong bộ sản phẩm."
+        }
+      }
+    }
+  ]
+}

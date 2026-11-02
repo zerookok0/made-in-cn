@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "kicker": "Made in China · direct from the makers",
+    "titleLine1": "Objects made in China.",
+    "titleLine2": "Chosen by hand.",
+    "lead": "A small, curated edit from the workshops that make them. Hand-cast night lights and hand-lacquered tea ware — no marketplace middlemen, no mystery sellers.",
+    "sub": "From Dehua celadon to crystal resin, every piece carries the hand of its maker.",
+    "ctaPrimary": "Shop the edit",
+    "ctaSecondary": "Meet the makers"
+  },
+  "maker": {
+    "eyebrow": "Our point of view",
+    "titleLine1": "We go to the workshop.",
+    "titleLine2": "Not the marketplace.",
+    "body": "MADE IN CN is a small edit of objects we can trace to a person and a place. We work directly with the studios, name the makers, and show the process — because “made in China” should mean something you can feel.",
+    "cta": "Read our craft notes"
+  },
+  "shop": {
+    "eyebrow": "The edit",
+    "title": "Three objects. Three makers.",
+    "note": "Collector lamps from a Shenzhen resin studio, and a lacquer cup by Master Lin Jianjun in Dehua.",
+    "cta": "Shop all"
+  },
+  "heritage": {
+    "eyebrow": "New · Heritage collection",
+    "titleLine1": "One maple leaf.",
+    "titleLine2": "Months of work.",
+    "body": "Master Lin Jianjun floats a real maple leaf through layer after layer of lacquer, then finishes the interior in pale celadon. Each cup is shaped, cured and polished by hand in Dehua — and arrives in a fitted gift box with its certificate.",
+    "cta": "Explore the cup"
+  },
+  "compare": {
+    "eyebrow": "Why buy direct",
+    "title": "Skip the middleman.",
+    "note": "No mystery seller. No marketplace markup.",
+    "rows": [
+      { "label": "Made in our partner workshops", "direct": "Yes", "market": "Resold" },
+      { "label": "Maker and process named", "direct": "Always", "market": "Often hidden" },
+      { "label": "Real human support", "direct": "WhatsApp", "market": "Chatbot" },
+      { "label": "Exclusive drops", "direct": "Direct", "market": "Generic stock" }
+    ]
+  },
+  "bundle": {
+    "eyebrow": "The collector pair",
+    "titleLine1": "One shelf.",
+    "titleLine2": "Two worlds.",
+    "body": "Pikachu and Gengar together — a warm glow and a little midnight. Both arrive in collector packaging.",
+    "cta": "Add both to cart"
+  },
+  "closing": {
+    "eyebrow": "MADE IN CN",
+    "titleLine1": "Made here.",
+    "titleLine2": "Kept for years.",
+    "body": "A small edit of objects with a maker, a material and a reason to keep them.",
+    "ctaPrimary": "Shop the edit",
+    "ctaSecondary": "Read our craft notes"
+  }
+}

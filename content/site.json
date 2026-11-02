@@ -1,0 +1,28 @@
+{
+  "brand": "MADE IN CN",
+  "brandCn": "中国制造",
+  "tagline": "Objects made in China. Chosen by hand.",
+  "legalName": "MADE IN CN Studio",
+  "email": "hello@madeincn.example",
+  "studio": "Jingdezhen · Dehua · Shenzhen",
+  "hours": "Mon–Fri, 09:00–18:00 (GMT+8)",
+  "url": "https://your-domain.example",
+  "currency": "USD",
+  "social": [
+    { "label": "TikTok", "href": "https://www.tiktok.com/" },
+    { "label": "Instagram", "href": "https://www.instagram.com/" }
+  ],
+  "policies": [
+    { "label": "Shipping & returns", "href": "/craft" },
+    { "label": "Craft & care", "href": "/craft" },
+    { "label": "Privacy", "href": "/craft" },
+    { "label": "Terms", "href": "/craft" }
+  ],
+  "navigation": [
+    { "href": "/", "label": "Home" },
+    { "href": "/shop", "label": "Shop" },
+    { "href": "/shop?collection=heritage", "label": "Heritage" },
+    { "href": "/craft", "label": "Our craft" },
+    { "href": "mailto:hello@madeincn.example", "label": "Contact" }
+  ]
+}

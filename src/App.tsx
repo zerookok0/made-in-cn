@@ -79,7 +79,8 @@ const FAQS = [
   },
 ]
 
-const asset = (file: string) => `${import.meta.env.BASE_URL}images/${file}`
+const ASSET_BASE = 'https://raw.githubusercontent.com/zerookok0/made-in-cn/main/public/images/'
+const asset = (file: string) => `${ASSET_BASE}${file}`
 const money = (value: number) => `$${value.toFixed(0)}`
 
 function Arrow() {

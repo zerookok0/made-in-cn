@@ -1,13 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
-
-interface Product {
-  id: string
-  name: string
-  subtitle: string
-  price: number
-  image: string
-  accent: string
-}
+import ProductDetail from './ProductDetail'
+import { TEA_CUP } from './data/teaCup'
+import { asset } from './lib/asset'
+import { money } from './lib/money'
+import type { Currency, Product } from './types'
 
 const PRODUCTS: Product[] = [
   {
@@ -15,6 +11,7 @@ const PRODUCTS: Product[] = [
     name: 'Pikachu',
     subtitle: "Electric Gold · Collector's Edition",
     price: 189,
+    currency: 'USD',
     image: 'pikachu-01.jpg',
     accent: '#e4a600',
   },
@@ -23,10 +20,13 @@ const PRODUCTS: Product[] = [
     name: 'Gengar',
     subtitle: "Phantom Purple · Collector's Edition",
     price: 179,
+    currency: 'USD',
     image: 'gengar-01.jpg',
     accent: '#7c5cff',
   },
 ]
+
+const CATALOG: Product[] = [...PRODUCTS, TEA_CUP]
 
 const STEPS = [
   { number: '01', title: 'Sculpt the scene', body: 'A miniature diorama, shaped and painted by hand.' },
@@ -79,10 +79,6 @@ const FAQS = [
   },
 ]
 
-const ASSET_BASE = 'https://raw.githubusercontent.com/zerookok0/made-in-cn/main/public/images/'
-const asset = (file: string) => `${ASSET_BASE}${file}`
-const money = (value: number) => `$${value.toFixed(0)}`
-
 function Arrow() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -119,11 +115,12 @@ function CloseIcon() {
 export default function App() {
   const [cart, setCart] = useState<Record<string, number>>({})
   const [cartOpen, setCartOpen] = useState(false)
+  const [teaCupOpen, setTeaCupOpen] = useState(false)
   const [toast, setToast] = useState('')
 
   const lines = useMemo(
     () =>
-      PRODUCTS.filter((product) => (cart[product.id] ?? 0) > 0).map((product) => ({
+      CATALOG.filter((product) => (cart[product.id] ?? 0) > 0).map((product) => ({
         ...product,
         qty: cart[product.id],
       })),
@@ -131,7 +128,13 @@ export default function App() {
   )
 
   const count = lines.reduce((total, line) => total + line.qty, 0)
-  const subtotal = lines.reduce((total, line) => total + line.price * line.qty, 0)
+  const totals = lines.reduce<Partial<Record<Currency, number>>>((result, line) => {
+    result[line.currency] = (result[line.currency] ?? 0) + line.price * line.qty
+    return result
+  }, {})
+  const totalLabel = (Object.keys(totals) as Currency[])
+    .map((currency) => money(totals[currency] ?? 0, currency))
+    .join(' + ')
 
   useEffect(() => {
     if (!toast) return
@@ -204,6 +207,7 @@ export default function App() {
 
           <nav className="nav" aria-label="Primary">
             <a href="#shop">Shop</a>
+            <a href="#heritage">Heritage</a>
             <a href="#craft">Our craft</a>
             <a href="#compare">Why direct</a>
             <a href="#reviews">Reviews</a>
@@ -348,6 +352,51 @@ export default function App() {
           </div>
         </section>
 
+        <section className="section heritage-section" id="heritage" aria-labelledby="heritage-title">
+          <div className="heritage-card">
+            <div className="heritage-media">
+              <img src={asset(TEA_CUP.image)} alt={TEA_CUP.gallery[0].alt} loading="lazy" />
+              <span className="heritage-stamp">
+                MADE IN CN
+                <b>Heritage</b>
+              </span>
+              <span className="heritage-caption">Dehua, China · 65 ml</span>
+            </div>
+
+            <div className="heritage-copy">
+              <p className="eyebrow">New collection · Product 9564</p>
+              <h2 id="heritage-title">
+                One maple leaf. <em>Months of work.</em>
+              </h2>
+              <p className="lead">
+                Master Lin Jianjun floats a real maple leaf through layer after layer of lacquer, then finishes the
+                interior in pale celadon. Each cup is shaped, cured and polished by hand in Dehua — and arrives in a
+                fitted gift box with its certificate.
+              </p>
+
+              <div className="heritage-meta">
+                <span>Handmade lacquer</span>
+                <span>Dehua celadon</span>
+                <span>Gift box included</span>
+              </div>
+
+              <div className="heritage-price">
+                <strong>{money(TEA_CUP.price, TEA_CUP.currency)}</strong>
+                <span>Product ID {TEA_CUP.id}</span>
+              </div>
+
+              <div className="heritage-actions">
+                <button className="btn btn-primary" type="button" onClick={() => setTeaCupOpen(true)}>
+                  Explore the cup <Arrow />
+                </button>
+                <button className="btn btn-ghost" type="button" onClick={() => addToCart(TEA_CUP)}>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="section" id="compare" aria-labelledby="compare-title">
           <div className="section-head">
             <div>
@@ -436,6 +485,7 @@ export default function App() {
         </div>
         <div className="footer-links">
           <a href="#shop">Shop</a>
+          <a href="#heritage">Heritage</a>
           <a href="#craft">Our craft</a>
           <a href="#compare">Why direct</a>
           <a href="mailto:studio@pokelight.example">Contact</a>
@@ -454,6 +504,10 @@ export default function App() {
           Shop now <Arrow />
         </a>
       </div>
+
+      {teaCupOpen && (
+        <ProductDetail product={TEA_CUP} onClose={() => setTeaCupOpen(false)} onAdd={addToCart} />
+      )}
 
       {toast && !cartOpen && <div className="toast" role="status">{toast}</div>}
 
@@ -484,7 +538,7 @@ export default function App() {
                       <img src={asset(line.image)} alt={line.name} />
                       <div className="cart-line-copy">
                         <strong>{line.name}</strong>
-                        <span>{money(line.price)} each</span>
+                        <span>{money(line.price, line.currency)} each</span>
                         <div className="qty">
                           <button type="button" onClick={() => changeQty(line.id, -1)} aria-label={`Decrease ${line.name}`}>−</button>
                           <span>{line.qty}</span>
@@ -496,7 +550,7 @@ export default function App() {
                   ))}
                 </div>
                 <div className="cart-footer">
-                  <div className="cart-total"><span>Subtotal</span><strong>{money(subtotal)}</strong></div>
+                  <div className="cart-total"><span>Subtotal</span><strong>{totalLabel}</strong></div>
                   <button className="btn btn-primary" type="button" onClick={checkout}>Checkout <Arrow /></button>
                   <p>Demo checkout. Connect WooCommerce to take payments.</p>
                 </div>

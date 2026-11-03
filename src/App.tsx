@@ -7,6 +7,7 @@ import { useRoute } from './lib/router'
 import { CraftPage } from './pages/CraftPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { PolicyPage } from './pages/PolicyPage'
 import { ProductPage } from './pages/ProductPage'
 import { ShopPage } from './pages/ShopPage'
 
@@ -27,6 +28,9 @@ function Routes() {
   if (path === '/') return <HomePage />
   if (path === '/shop') return <ShopPage />
   if (path === '/craft') return <CraftPage />
+  if (path === '/policies/shipping-returns') return <PolicyPage kind="shipping" />
+  if (path === '/policies/privacy') return <PolicyPage kind="privacy" />
+  if (path === '/policies/terms') return <PolicyPage kind="terms" />
   if (segments[0] === 'collection' && segments[1]) return <ProductPage slug={segments[1]} />
   return <NotFoundPage />
 }

@@ -13,10 +13,10 @@
     { "label": "Instagram", "href": "https://www.instagram.com/" }
   ],
   "policies": [
-    { "label": "Shipping & returns", "href": "/craft" },
+    { "label": "Shipping & returns", "href": "/policies/shipping-returns" },
     { "label": "Craft & care", "href": "/craft" },
-    { "label": "Privacy", "href": "/craft" },
-    { "label": "Terms", "href": "/craft" }
+    { "label": "Privacy", "href": "/policies/privacy" },
+    { "label": "Terms", "href": "/policies/terms" }
   ],
   "navigation": [
     { "href": "/", "label": "Home" },

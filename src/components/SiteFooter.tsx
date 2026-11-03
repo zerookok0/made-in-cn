@@ -42,7 +42,7 @@ export function SiteFooter() {
           <h4>{t('footer.studio')}</h4>
           <AppLink href="/craft">{t('nav.craft')}</AppLink>
           <AppLink href="/craft">{t('footer.materials')}</AppLink>
-          <AppLink href="/craft">{t('footer.shipping')}</AppLink>
+          <AppLink href="/policies/shipping-returns">{t('footer.shipping')}</AppLink>
           <AppLink href={`mailto:${site.email}`}>{t('nav.contact')}</AppLink>
         </div>
 

@@ -1,5 +1,4 @@
 import { AppLink } from '../components/AppLink'
-import { site } from '../data/site'
 import { useI18n } from '../i18n'
 import { useDocumentMeta } from '../lib/router'
 
@@ -45,7 +44,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Before you send it back',
           bullets: [
-            `Email ${site.email} with your order number and the item you want to return or exchange.`,
+            'Use the Contact link in the header with your order number and the item you want to return or exchange.',
             'Please keep the item unused and in its original packaging, with any certificate, accessories and gift box.',
             'If the item arrived damaged or faulty, include a photo so we can resolve it quickly.',
           ],
@@ -53,7 +52,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Refunds and exchanges',
           paragraphs: [
-            'Once the return arrives and is checked, we will issue the refund to the original payment method within 5–10 business days. Your bank may need a little longer to show it.',
+            'Once the return arrives and is checked, we will issue the refund to the original payment method within 3–5 business days. Your bank may need a little longer to show it.',
             'Exchanges depend on stock. If the replacement you want is unavailable, you can choose a refund instead.',
           ],
         },
@@ -66,8 +65,8 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         },
       ],
       contactTitle: 'Start a return',
-      contactBody: 'Send us your order number and a short note. We will reply with the next step and arrange the return shipping.',
-      contactCta: 'Email us',
+      contactBody: 'Use the Contact link in the header and send your order number plus a short note. We will reply with the next step and arrange the return shipping.',
+      contactCta: 'Contact us',
       shopCta: 'Back to the shop',
     },
     vi: {
@@ -88,7 +87,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Trước khi gửi trả',
           bullets: [
-            `Gửi email đến ${site.email} kèm mã đơn hàng và sản phẩm bạn muốn trả hoặc đổi.`,
+            'Dùng liên kết Liên hệ ở đầu trang và gửi mã đơn hàng cùng sản phẩm bạn muốn trả hoặc đổi.',
             'Vui lòng giữ sản phẩm chưa sử dụng, còn nguyên bao bì, kèm chứng nhận, phụ kiện và hộp quà nếu có.',
             'Nếu sản phẩm bị hỏng hoặc lỗi khi nhận, hãy gửi kèm ảnh để chúng tôi xử lý nhanh hơn.',
           ],
@@ -96,7 +95,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Hoàn tiền và đổi hàng',
           paragraphs: [
-            'Sau khi nhận và kiểm tra hàng trả, chúng tôi sẽ hoàn tiền về phương thức thanh toán ban đầu trong vòng 5–10 ngày làm việc. Ngân hàng của bạn có thể cần thêm thời gian để hiển thị khoản tiền.',
+            'Sau khi nhận và kiểm tra hàng trả, chúng tôi sẽ hoàn tiền về phương thức thanh toán ban đầu trong vòng 3–5 ngày làm việc. Ngân hàng của bạn có thể cần thêm thời gian để hiển thị khoản tiền.',
             'Việc đổi hàng phụ thuộc vào tồn kho. Nếu sản phẩm thay thế không còn, bạn có thể chọn hoàn tiền.',
           ],
         },
@@ -109,8 +108,8 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         },
       ],
       contactTitle: 'Bắt đầu trả hàng',
-      contactBody: 'Gửi mã đơn hàng và một ghi chú ngắn. Chúng tôi sẽ phản hồi bước tiếp theo và sắp xếp vận chuyển trả hàng.',
-      contactCta: 'Gửi email',
+      contactBody: 'Dùng liên kết Liên hệ ở đầu trang, gửi mã đơn hàng và một ghi chú ngắn. Chúng tôi sẽ phản hồi bước tiếp theo và sắp xếp vận chuyển trả hàng.',
+      contactCta: 'Liên hệ',
       shopCta: 'Quay lại cửa hàng',
     },
   },
@@ -163,7 +162,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Your choices',
           paragraphs: [
-            'Depending on where you live, you may ask to access, correct, delete or restrict the use of your personal information, or object to certain processing. Email us and we will respond within the time required by applicable law.',
+            'Depending on where you live, you may ask to access, correct, delete or restrict the use of your personal information, or object to certain processing. Contact us through the site and we will respond within the time required by applicable law.',
             'Nothing in this policy limits rights you have under mandatory consumer or privacy law.',
           ],
         },
@@ -221,7 +220,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Quyền của bạn',
           paragraphs: [
-            'Tùy nơi bạn sinh sống, bạn có thể yêu cầu truy cập, chỉnh sửa, xóa hoặc hạn chế việc sử dụng thông tin cá nhân, hoặc phản đối một số hoạt động xử lý. Hãy gửi email và chúng tôi sẽ phản hồi trong thời hạn pháp luật yêu cầu.',
+            'Tùy nơi bạn sinh sống, bạn có thể yêu cầu truy cập, chỉnh sửa, xóa hoặc hạn chế việc sử dụng thông tin cá nhân, hoặc phản đối một số hoạt động xử lý. Hãy liên hệ với chúng tôi qua trang web và chúng tôi sẽ phản hồi trong thời hạn pháp luật yêu cầu.',
             'Không nội dung nào trong chính sách này giới hạn quyền của bạn theo pháp luật bảo vệ người tiêu dùng hoặc quyền riêng tư bắt buộc.',
           ],
         },
@@ -291,7 +290,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Changes and contact',
           paragraphs: [
-            'We may update these terms from time to time. The date at the top shows the latest version. Questions? Email us and we will be glad to help.',
+            'We may update these terms from time to time. The date at the top shows the latest version. Questions? Contact us through the site and we will be glad to help.',
           ],
         },
       ],
@@ -358,7 +357,7 @@ const COPY: Record<PolicyKind, Record<'en' | 'vi', PolicyCopy>> = {
         {
           title: 'Thay đổi và liên hệ',
           paragraphs: [
-            'Chúng tôi có thể cập nhật các điều khoản này theo thời gian. Ngày ở đầu trang cho biết phiên bản mới nhất. Có câu hỏi? Hãy gửi email, chúng tôi sẵn lòng hỗ trợ.',
+            'Chúng tôi có thể cập nhật các điều khoản này theo thời gian. Ngày ở đầu trang cho biết phiên bản mới nhất. Có câu hỏi? Hãy liên hệ với chúng tôi qua trang web, chúng tôi sẵn lòng hỗ trợ.',
           ],
         },
       ],
@@ -408,9 +407,9 @@ export function PolicyPage({ kind }: { kind: PolicyKind }) {
             <p>{content.contactBody}</p>
           </div>
           <div className="policy-contact-actions">
-            <a className="btn btn-primary" href={`mailto:${site.email}`}>
+            <AppLink className="btn btn-primary" href="/craft">
               {content.contactCta}
-            </a>
+            </AppLink>
             <AppLink className="btn btn-ghost" href="/shop">
               {content.shopCta}
             </AppLink>

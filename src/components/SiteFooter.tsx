@@ -53,7 +53,6 @@ export function SiteFooter() {
               {item.label}
             </a>
           ))}
-          <a href={`mailto:${site.email}`}>{site.email}</a>
         </div>
 
         <div className="footer-news">
